@@ -1,0 +1,60 @@
+<!doctype html>
+{% extends "base.html" %}
+<html>
+<style>
+table, th, td {
+  border:2px solid black;
+}
+</style>
+    <head>
+      {% if title %}
+      <title>{{ title }} - Microblog</title>
+      {% else %}
+      <title>Welcome to Microblog</title>
+      {% endif %}
+    </head>
+    <body>
+        <h1>Hello, {{ user.username }}!</h1>
+     <table style="width:100%">
+  <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Birth</th>
+      <th>PESEL</th>
+      <th>Sex</th>
+      <th>Sampleid</th>
+      <th>Active</th>
+
+    <th></th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+      <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+      <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+  </tr>
+
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+      <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+      <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+  </tr>
+</table>
+
+    <p>To jest tabela z danymi pacjentow</p>
+     <h1>Hi, {{ user.username }}!</h1>
+        {% for post in posts %}
+        <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+        {% endfor %}
+    </body>
+</html>
